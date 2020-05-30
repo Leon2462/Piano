@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import './Piano.css';
 import Key from '../Key/Key'
 
 const sounds = [
@@ -17,6 +16,18 @@ const sounds = [
     new Audio('https://piano-tuning.ru/audio/sounds/piano_B.mp3')
 ];
 
+const PIANO = {
+    height: '200px',
+    margin: '100px 0 0 100px',
+    position: 'fixed'
+}
+
+const SPAN = {
+    margin: '0 10px 0 10px'
+}
+const BUTTON = {
+    margin: '10px 0 0 10px'
+}
 class Piano extends Component {
 
     constructor(props){
@@ -98,17 +109,17 @@ class Piano extends Component {
         return (
             <div 
                 onClick = {this.onClickHandler}
-                className='Piano'>
+                style={PIANO}>
                 {keys}
                 <div>
-                <button onClick = {this.train} >Train</button>
-                <span>{currentNote}</span>
-                <span>{status}</span>
+                <button style = {BUTTON} onClick = {this.train} >Train</button>
+                <span style = {SPAN}>{currentNote}</span>
+                <span style = {SPAN}>{status}</span>
                 </div>
-                <button onClick = {this.study} >Study</button>
+                <button style = {BUTTON} onClick = {this.study} >Study</button>
                 <div>
-                <button onClick = {this.reset} >Reset</button>
-                <span >Число успешных попыток: {success}</span>
+                <button style = {BUTTON} onClick = {this.reset} >Reset</button>
+                <span style = {SPAN}>Число успешных попыток: {success}</span>
                 </div>
             </div>
         )
