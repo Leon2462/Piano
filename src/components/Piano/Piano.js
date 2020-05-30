@@ -17,7 +17,6 @@ const sounds = [
 ];
 
 const PIANO = {
-    height: '200px',
     margin: '100px 0 0 100px',
     position: 'fixed'
 }

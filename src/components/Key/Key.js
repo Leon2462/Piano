@@ -2,8 +2,8 @@ import React from 'react';
 
 const BLACKKEY = {
     float:'left',
-    width: '30px',
-    height: '100px',
+    width: '50px',
+    height: '150px',
     background: 'black',
     color: 'white',
     position: 'relative',
@@ -12,8 +12,8 @@ const BLACKKEY = {
 
 const WHITEKEY = {
     float:'left',
-    width: '40px',
-    height: '200px',
+    width: '60px',
+    height: '300px',
     background: 'whitesmoke',
     border: '1px solid black',
     lineHeight: '380px'
@@ -29,7 +29,7 @@ const Key = props => {
         }
         else {
             keyColor =BLACKKEY
-            pos = `${-15}px`
+            pos = `${-25}px`
         }
         const key = {
             marginLeft: pos,
