@@ -18,6 +18,7 @@ const sounds = [
 ];
 
 class Piano extends Component {
+
     constructor(props){
         super(props)
         this.state = {
@@ -38,7 +39,7 @@ class Piano extends Component {
                 setTimeout(()=>{ sounds[i].load() }, 2000)
             }
         }
-        if (currentNote !== '') {
+        if (currentNote !== '' && notes.indexOf(id) !== -1) {
             this.check(id);
         }
     }
@@ -78,6 +79,10 @@ class Piano extends Component {
         this.setState({success: success + 1})
     }
 
+    reset = () => {
+        this.setState({success: 0})
+    }
+
     render() {
         const {notes, currentNote,status, showNotes,success} = this.state;
         const keys = [];
@@ -90,7 +95,7 @@ class Piano extends Component {
                 />)
         }
 
-        return(
+        return (
             <div 
                 onClick = {this.onClickHandler}
                 className='Piano'>
@@ -101,7 +106,10 @@ class Piano extends Component {
                 <span>{status}</span>
                 </div>
                 <button onClick = {this.study} >Study</button>
+                <div>
+                <button onClick = {this.reset} >Reset</button>
                 <span >Число успешных попыток: {success}</span>
+                </div>
             </div>
         )
     }
