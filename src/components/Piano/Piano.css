@@ -1,13 +1,12 @@
 .Piano {
-    width:293px;
     height:200px;
     margin: 100px 0 0 100px ;
-    position: relative;
-    border: 2px solid black;
+    position: fixed;
 }
 .Piano span {
     margin: 0 10px 0 10px;
 }
 .Piano button {
-    margin-top: 10px;
+    margin: 10px 0 0 10px;
+    
 }

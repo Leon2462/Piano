@@ -44,7 +44,6 @@ class Piano extends Component {
     }
 
     check = (id) => {
-        console.log(id)
         const {currentNote} = this.state;
         if (id === currentNote) {
             this.setState({status: 'Верно'})
@@ -72,7 +71,6 @@ class Piano extends Component {
     study = () => {
         const {showNotes} = this.state;
         this.setState({showNotes: !showNotes})
-        console.log(this.state.showNotes)
     }
 
     success = () => {
@@ -97,11 +95,13 @@ class Piano extends Component {
                 onClick = {this.onClickHandler}
                 className='Piano'>
                 {keys}
+                <div>
                 <button onClick = {this.train} >Train</button>
-                <button onClick = {this.study} >Study</button>
                 <span>{currentNote}</span>
                 <span>{status}</span>
-                <span style={{display:'inline-block'}}>Число успешных попыток: {success}</span>
+                </div>
+                <button onClick = {this.study} >Study</button>
+                <span >Число успешных попыток: {success}</span>
             </div>
         )
     }
